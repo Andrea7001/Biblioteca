@@ -4,49 +4,67 @@
 }
 
 <!DOCTYPE html>
-
-<html>
+<html lang="es">
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
-    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col-md-6">
-                <h1>Inicio de Sesion</h1>
-                <hr />
-                <form asp-controller="Usuario" asp-action="Login" method="post">
-                    <div class="form-group m-2">
-                        <label class="control-label">Correo</label>
-                        <input type="email" placeholder="Email" asp-for="Email" class="form-control" />
-                    </div>
-
-                    <div class="form-group m-2">
-                        <label class="control-label">Clave</label>
-                        <input type="password" placeholder="Password" asp-for="Password" class="form-control" />
-                    </div>
-
-                    <label class="control-label" m-2>
-                        <input class="form-check-input" type="checkbox" asp-for="KeepLoggedIn" />
-                        Mantener iniciada la sesión.
-                    </label>
-                    <div class="form-group m-2">
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
-                    </div>
-
-                    @if (ViewData["ValidateMessage"] != null)
-                    {
-                        <br />
-                        <br />
-                        <label class="control-label text-danger">@ViewData["ValidateMessage"]</label>
-
-                    }
-                </form>
+                <div class="login-container">
+                    <h1 class="text-center">Inicio de Sesión</h1>
+                    <hr />
+                    <form asp-controller="Usuario" asp-action="Login" method="post">
+                        <div class="form-group">
+                            <label for="email" class="control-label">Correo</label>
+                            <input type="email" id="email" placeholder="Email" asp-for="Email" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="control-label">Clave</label>
+                            <input type="password" id="password" placeholder="Password" asp-for="Password" class="form-control" />
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" asp-for="KeepLoggedIn" id="keepLoggedIn" />
+                            <label class="form-check-label" for="keepLoggedIn">Mantener iniciada la sesión</label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                        </div>
+                        @if (ViewData["ValidateMessage"] != null)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                @ViewData["ValidateMessage"]
+                            </div>
+                        }
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

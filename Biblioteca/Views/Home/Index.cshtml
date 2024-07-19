@@ -1,8 +1,37 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+   
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Bienvenido a la Biblioteca</h1>
+            <p class="lead">Explora nuestro catálogo de libros y recursos.</p>
+            <hr class="my-4">
+            <p>Utiliza nuestro sistema para gestionar tus préstamos y reservas.</p>
+            <a class="btn btn-outline-success" asp-area="" asp-controller="Prestamo" asp-action="Index">Prestamos</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-center text-white py-3">
+       
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
