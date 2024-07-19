@@ -31,6 +31,12 @@ namespace Biblioteca.Models
         public DateTime DiaDevolucion { get; set; }
 
 
+        [Required(ErrorMessage = "La categoria es requerido")]
+        [MaxLength(50, ErrorMessage = "Maximo 50 caracteres")]
+        [Display(Name = "Categoria del Libro")]
+        public string? Categoria { get; set; }
+
+
         //propiedades de navegacion 
 
         public Libro? Libro { get; set; }

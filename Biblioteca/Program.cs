@@ -1,10 +1,19 @@
 using Microsoft.EntityFrameworkCore;
 using Biblioteca.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAuthentication(
+    CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(option => {
+
+        option.LoginPath = "/Usuario/Login";
+        option.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+    });
 
 builder.Services.AddDbContext<ContextoDeDatos>(opciones =>
  opciones.UseSqlServer(builder.Configuration.GetConnectionString("conexion")));
