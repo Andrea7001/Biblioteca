@@ -12,5 +12,7 @@ namespace Biblioteca.Models
         public DbSet<Lector> Lectores { get; set; }
 
         public DbSet<Prestamo> Prestamos { get; set; }
+
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 }
