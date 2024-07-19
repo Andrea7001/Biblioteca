@@ -1,12 +1,15 @@
 ﻿using Biblioteca.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 
 namespace Biblioteca.Controllers
 {
+    [Authorize]
     public class PrestamoController : Controller
     {
+        
 
         private readonly ContextoDeDatos contexto;
         public PrestamoController(ContextoDeDatos context)

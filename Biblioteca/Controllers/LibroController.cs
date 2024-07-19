@@ -1,10 +1,12 @@
 ﻿using Biblioteca.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 
 namespace Biblioteca.Controllers
 {
+    [Authorize]
     public class LibroController : Controller
     {
         private readonly ContextoDeDatos contexto;

@@ -1,13 +1,16 @@
 ﻿using System.Diagnostics.Contracts;
 using Biblioteca.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 
 namespace Biblioteca.Controllers
 {
+    [Authorize]
     public class LectorController : Controller
     {
+        
         private readonly ContextoDeDatos contexto;
 
         // inyecciòn del contexto de datos.
