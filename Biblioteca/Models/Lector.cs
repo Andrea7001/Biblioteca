@@ -27,5 +27,8 @@ namespace Biblioteca.Models
         [Display(Name = "Telefono del lector")]
 
         public string? Telefono { get; set; }
+
+
+        public List<Prestamo>? Prestamos { get; set; }
     }
 }

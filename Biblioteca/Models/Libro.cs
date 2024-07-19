@@ -13,6 +13,6 @@ namespace Biblioteca.Models
         [Display(Name = "Nombre del Libro")]
         public string? Nombre { get; set; }
 
-        
+        public List<Prestamo>? Prestamos { get; set; }
     }
 }
